@@ -40,6 +40,8 @@ noduplicates=netflix_data.drop_duplicates(subset=["director","cast","country"])
 
 print(netflix_data.shape,noduplicates.shape)
 
+#testing the blue to green
+
 #we can see we dropped ~350 rows with these duplicates
 
 
