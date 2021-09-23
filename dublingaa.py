@@ -25,6 +25,8 @@ print(dublingaa)
 #quick check to make sure the calc worked
 
 dublingaa.plot(x="Match",y="winning_margin",kind="scatter", color="blue",title="Winning Margin over Time",rot=68)
+
+
 plt.grid(True,linestyle="--")
 plt.show()
 
@@ -75,7 +77,9 @@ plt.show()
 print(dublingaa.groupby("Season")["goals_for"].agg([np.mean,min,sum,max]))
 print(dublingaa.groupby("Series_Yr")["goals_for"].agg([np.mean,min,sum,max]))
 
-
+fi, ax = plt.subplots()
+ax.plot(dublingaa["Series_Yr"],dublingaa["goals_for"])
+plt.show()
 
 
 

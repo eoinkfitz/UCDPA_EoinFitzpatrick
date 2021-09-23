@@ -14,7 +14,7 @@ olympics_ranked = olympics.sort_values(["Gold","Silver","Bronze"],ascending=[Fal
 
 print(olympics_ranked)
 
-#filter for USA only
+#filter for USA Country only
 
 usaonly = olympics_ranked[olympics_ranked["Country"]=="USA"]
 
