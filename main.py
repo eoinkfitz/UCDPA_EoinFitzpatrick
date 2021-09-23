@@ -177,7 +177,7 @@ plt.show()
 lebanonindexed = lebanon.set_index(['Year'])
 print(lebanonindexed)
 
-#lebanonindexed shows us that the country's debt was 73.9BN USD in the year of default
+#lebanonindexed shows us that the country's debt was 73.9BN USD in the year of default (2020)
 #we need to calculate how a hypothetical restructured debt profile would look for the country
 #lets use an example pricing of Ukraine who are also relatively recently out of default
 #We assume Lebanon's restructuring gets them a 20% haircut, i.e. debt reduced to 80% of original level
