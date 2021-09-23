@@ -64,7 +64,7 @@ yearindex = worldbankrecent.set_index(['Year'])
 annualstats=yearindex.groupby("Year")["External Debt to GNI(%)","Debt Service","Debt USD"].mean()
 print(annualstats)
 
-sns.set(rc = {'figure.figsize':(15,8)})
+sns.set(rc = {'figure.figsize':(7,5)})
 
 fig,ax = plt.subplots()
 ax.plot(annualstats.index,annualstats["External Debt to GNI(%)"],color = "red",label = "Debt to GNI(%) [L]")
@@ -97,9 +97,9 @@ top20 = maxdebtservice.head(20)
 # Step Number 7 graph the data
 
 fig,ax = plt.subplots()
-ax.bar(top20.index,top20['Debt Service'],color = "green",label = "Top 20 World Bank Sovs by Debt Servicing Costs")
-plt.xticks(rotation=90, ha='right')
-plt.title("Heavily Indebted Nations in recent times")
+ax.bar(top20.index,top20['Debt Service'],color = "green",label = "Top 20 World Bank Sovs by Debt Servicing Costs (% of GNI)")
+plt.xticks(rotation=60, ha='right')
+plt.title("Heavily Indebted Nations in recent times by Debt Servicing Costs (% of GNI)")
 ax.legend()
 plt.show()
 
@@ -151,6 +151,8 @@ plt.show()
 
 # use the scatterplot function to build the bubble map
 
+sns.set(rc = {'figure.figsize':(10,6)})
+
 import seaborn as sns
 data = lebanon
 sns.relplot(data=data, x="Debt Service", y="External Debt to GNI(%)", legend=False,sizes=(40, 400), alpha = .5,height = 6,size = 'Debt USD')
@@ -161,9 +163,9 @@ plt.show()
 
 ukraine =  worldbank[worldbank["Country Code"]=="UKR"]
 fig,ax = plt.subplots()
-Debt_timeseries(ax, ukraine['Year'],ukraine['External Debt to GNI(%)'],'blue','Year','Debt to GNI (%) Ukraine')
+Debt_timeseries(ax, ukraine['Year'],ukraine['External Debt to GNI(%)'],'orange','Year','Debt to GNI (%) Ukraine')
 ax2 = ax.twinx()
-Debt_timeseries(ax2, ukraine['Year'],ukraine['Debt Service'],'green','Year','Debt Service Ukraine')
+Debt_timeseries(ax2, ukraine['Year'],ukraine['Debt Service'],'navy','Year','Debt Service Ukraine')
 ax.set_title("Ukraine Debt Servicing vs Debt to GNI(%)")
 plt.show()
 
