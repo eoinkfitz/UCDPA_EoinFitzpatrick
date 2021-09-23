@@ -5,6 +5,9 @@ import seaborn
 import seaborn as sns
 from datetime import datetime
 import numpy_financial as npf
+from matplotlib import rcParams
+
+
 #Step Number 1 - import the csv files of your data, & check for missing values
 
 debtservicedataset = pd.read_csv('debt_service.csv')
@@ -60,6 +63,8 @@ worldbank.reset_index(drop=True, inplace=True)
 yearindex = worldbankrecent.set_index(['Year'])
 annualstats=yearindex.groupby("Year")["External Debt to GNI(%)","Debt Service","Debt USD"].mean()
 print(annualstats)
+
+sns.set(rc = {'figure.figsize':(15,8)})
 
 fig,ax = plt.subplots()
 ax.plot(annualstats.index,annualstats["External Debt to GNI(%)"],color = "red",label = "Debt to GNI(%) [L]")
@@ -164,11 +169,13 @@ plt.show()
 
 # use the scatterplot function to build the bubble map
 import seaborn as sns
+
 #create data
 data2 = ukraine
 sns.relplot(data=data2, x="Debt Service", y="External Debt to GNI(%)", legend=False,sizes=(40, 400), alpha = .5,height = 6,size = 'Debt USD')
 plt.title("Ukraine Debt Servicing(%) vs Debt to GNI(%)")
 plt.show()
+
 
 #Step Number8(d) the implications of refinancing for Lebanon
 
