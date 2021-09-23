@@ -82,15 +82,11 @@ plt.show()
 
 stats=worldbankrecent.groupby("Country Name")["External Debt to GNI(%)","Debt Service","Debt USD"].max()
 maxdebtservice = stats.sort_values(["Debt Service"],ascending=False)
-
 print(maxdebtservice)
 
 # Step 6 - filter for the top names,
 
 top20 = maxdebtservice.head(20)
-
-
-
 # Step Number 7 graph the data
 
 fig,ax = plt.subplots()
@@ -224,7 +220,6 @@ plt.show()
 #Step Number 9) What has been the impact of Covid-19 on National GDP Levels to our two Defaulted Sovereigns?
 import requests
 
-
 request=requests.get('http://api.worldbank.org/v2/country/ukr/indicators/NY.GDP.MKTP.KD.ZG?format=json')
 ukrgdp = request.json()
 print(request.status_code)
@@ -239,13 +234,11 @@ print(lebgdp)
 #Step Number 10) How has Covid-19 affected Sovereign Debt levels??
 #import latest Debt levels for 2020 (only Developed countries available, (i.e. World Bank goes to 2019)
 #OECD file shows general government Debt to GDP up to and including 2020
-
 oecd2020debt = pd.read_csv('ggvtdebt.csv')
 print(oecd2020debt)
 
 missing_values_count5 = oecd2020debt.isnull().sum()
 print(missing_values_count5[0:8])
-
 #error check shows that OECD file has no missing values
 annualstats=oecd2020debt.groupby("TIME")["Value"].mean()
 print(annualstats)
