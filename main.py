@@ -167,7 +167,7 @@ import seaborn as sns
 #create data
 data2 = ukraine
 sns.relplot(data=data2, x="Debt Service", y="External Debt to GNI(%)", legend=False,sizes=(40, 400), alpha = .5,height = 6,size = 'Debt USD')
-plt.title("Ukraine Debt Servicing vs Debt to GNI(%)")
+plt.title("Ukraine Debt Servicing (%) vs Debt to GNI(%)")
 plt.show()
 
 #8(d) the implications of refinancing for Lebanon
