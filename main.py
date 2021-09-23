@@ -98,7 +98,7 @@ plt.title("Heavily Indebted Nations in recent times")
 ax.legend()
 plt.show()
 
-# 8a) - narrow to two more famous recent defaults and analyze the factors that led to the default
+#Step Number 8a) - narrow to two more famous recent defaults and analyze the factors that led to the default
 #create a Numpy array and list from your graph/top20 table to analyse the top5 names in more detail
 
 top5maxdebtserv = np.array([94.367,59.6,58.4,36.09,32.95])
@@ -127,7 +127,7 @@ print("is",Top5withDebtServicingData[1][3])
 print("The max debt servicing since 2005 of",Top5withDebtServicingData[0][4])
 print("is",Top5withDebtServicingData[1][4])
 
-#8(b) analyse Lebanon
+#Step Number8(b) analyse Lebanon
 lebanon =  worldbank[worldbank["Country Code"]=="LBN"]
 ukraine =  worldbank[worldbank["Country Code"]=="UKR"]
 
@@ -152,7 +152,7 @@ sns.relplot(data=data, x="Debt Service", y="External Debt to GNI(%)", legend=Fal
 plt.title("Lebanon Debt Servicing vs Debt to GNI(%)")
 plt.show()
 
-#8(c) analyse Ukraine
+#Step Number8(c) analyse Ukraine
 
 ukraine =  worldbank[worldbank["Country Code"]=="UKR"]
 fig,ax = plt.subplots()
@@ -170,7 +170,7 @@ sns.relplot(data=data2, x="Debt Service", y="External Debt to GNI(%)", legend=Fa
 plt.title("Ukraine Debt Servicing(%) vs Debt to GNI(%)")
 plt.show()
 
-#8(d) the implications of refinancing for Lebanon
+#Step Number8(d) the implications of refinancing for Lebanon
 
 lebanonindexed = lebanon.set_index(['Year'])
 print(lebanonindexed)
@@ -215,7 +215,7 @@ plt.xlabel('Number of Months (i.e. Monthly Repayment Schedule)')
 plt.ylabel('Outstanding Principal (USD BN)')
 plt.show()
 
-#Part 9) What has been the impact of Covid-19 on National GDP Levels to our two Defaulted Sovereigns?
+#Step Number 9) What has been the impact of Covid-19 on National GDP Levels to our two Defaulted Sovereigns?
 import requests
 
 
@@ -230,7 +230,7 @@ print(request2.status_code)
 print(request2.text)
 print(lebgdp)
 
-#10 How has Covid-19 affected Sovereign Debt levels??
+#Step Number 10) How has Covid-19 affected Sovereign Debt levels??
 #import latest Debt levels for 2020 (only Developed countries available, (i.e. World Bank goes to 2019)
 #OECD file shows general government Debt to GDP up to and including 2020
 
