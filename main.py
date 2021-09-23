@@ -241,7 +241,6 @@ missing_values_count5 = oecd2020debt.isnull().sum()
 print(missing_values_count5[0:8])
 
 #error check shows that OECD file has no missing values
-
 annualstats=oecd2020debt.groupby("TIME")["Value"].mean()
 print(annualstats)
 
